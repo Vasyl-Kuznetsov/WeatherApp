@@ -1,0 +1,19 @@
+{{> header}}
+<h1>{{weatherData.city}}</h1>
+<p>Description: {{weatherData.description}}</p>
+<img src="http://openweathermap.org/img/w/{{weatherData.icon}}.png" alt="Weather Icon">
+<ul>
+    <li>Temperature: {{weatherData.temperature}} °C</li>
+    <li>Humidity: {{weatherData.humidity}}%</li>
+    <li>Pressure: {{weatherData.pressure}} hPa</li>
+</ul>
+<nav>
+    <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem;">
+        {{#each cities}}
+        <li>
+            <a href="/weather/{{this.name}}" style="padding: 0.5rem 1rem; text-decoration: none; border: 1px solid #ccc; border-radius: 4px; background-color: #007bff; color: white; display: inline-block;">{{this.name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>
+{{> footer}}
